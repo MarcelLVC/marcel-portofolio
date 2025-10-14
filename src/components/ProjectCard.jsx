@@ -1,12 +1,13 @@
 import React from "react";
 import { Github } from "lucide-react";
 
+
 const ProjectCard =({project})=>{
     return(
         <div className="group bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-1 flex flex-col h-full">
             <div className="h-48 bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center">
-                <div className="text-6xl font-bold text-gray-300">
-                    {project.title.charAt(0)}
+                <div className="h-full w-full flex items-center justify-center">
+                    {project.Image ? <img src={project.Image} alt={project.title} className="h-full object-cover"/> : "No Image"}
                 </div>
             </div>
 
