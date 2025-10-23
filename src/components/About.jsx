@@ -1,6 +1,12 @@
 import React from "react";
 import { Github, Linkedin, Mail, Code, Lightbulb, Goal, Settings} from 'lucide-react';
 import logo from '../assets/profile-img.png';
+import  {contactLinks} from "../data/contact";
+
+const contactLink = contactLinks.map(link =>({
+    ...link, 
+    icon: link.label === "Email Me" ? <Mail className="w-5 h-5 mr-2"/> : link.label === "GitHub" ? <Github className="w-5 h-5 mr-2"/> : link.label === "LinkedIn" ? <Linkedin className="w-5 h-5 mr-2"/>  : null
+}));
 
 const About =({hasAnimated}) =>{
     const features =[
@@ -11,13 +17,13 @@ const About =({hasAnimated}) =>{
         {
             icon: <Goal className="w-8 h-8 mb-4 text-black"/>,
             title: "Current Goal",
-            description: " Building full-stack web applications using modern frameworks and technologies."
+            description: "Learning to become a Fullstack developer, Building full-stack web applications using modern frameworks and technologies."
 
         },
         {
             icon: <Lightbulb className="w-8 h-8 mb-4 text-black"/>,
             title: "Focus",
-            description: " Artifical Intelligence and sofware developement"
+            description: "Machine Learning, UI/UX, software development, and database"
 
         },
         {
@@ -39,11 +45,18 @@ const About =({hasAnimated}) =>{
                                 Computer Science undergraduate student at BINUS University with interests in artificial intelligence, machine learning, and software development. Enjoy solving real-world problems through code, algorithms, and data-driven insights. Actively involved in group and personal projects to enhance technical skills. Loved to learn and explore new technologies.
                             </p>
                             
-                            <div className="flex space-x-4">
-                                <Github className="w-6 h-6 text-gray-600 hover:text-black cursor-pointer transition-colors"/>
-                                <Linkedin className="w-6 h-6 text-gray-600 hover:text-black cursor-pointer transition-colors"/>
-                                <Mail className="w-6 h-6 text-gray-600 hover:text-black cursor-pointer transition-colors"/>
+                            <div className="flex space-x-4" >
+                                <a href={contactLink[1].href}>
+                                    <Github className="w-6 h-6 text-gray-600 hover:text-black cursor-pointer transition-colors"/>
+                                </a>
+                                <a href={contactLink[2].href}>
+                                    <Linkedin className="w-6 h-6 text-gray-600 hover:text-black cursor-pointer transition-colors"/>
+                                </a>
+                                <a href={contactLink[0].href}>
+                                    <Mail className="w-6 h-6 text-gray-600 hover:text-black cursor-pointer transition-colors"/>
+                                </a>
                             </div>
+                            
                         </div>
 
                         <div className="grid grid-cols-2 gap-6">

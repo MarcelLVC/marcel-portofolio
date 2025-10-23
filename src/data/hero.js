@@ -6,7 +6,7 @@ export const heroData ={
         "Software Developer",
         "Tech Enthusiast"
     ],
-    description: "Passionate software developer with a knack for creating efficient and scalable solutions. Intrest in AI, Machine learning, and software development and always eager to learn new technologies.",
+    description: "A passionate software developer with a knack for creating efficient and scalable solutions. Intrest in AI, Machine learning, and software development, always eager to learn new technologies.",
     
     socialLinks: [
         {
